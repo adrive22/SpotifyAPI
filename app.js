@@ -13,9 +13,12 @@ var crypto = require('crypto');
 var cors = require('cors');
 var querystring = require('querystring');
 var cookieParser = require('cookie-parser');
+var config = require('./config.js');
 
-var client_id = '5936bb50475e464b93490eb1388d376e'; // your clientId
-var client_secret = '046ab7a001bd48ea89b22f6c9364eb02'; // Your secret
+var client_id = config.client_id;// your clientId
+console.log(client_id)
+var client_secret = config.client_secret; // Your secret
+console.log(client_secret)
 var redirect_uri = "http://localhost:8888/callback"; 
 
 
