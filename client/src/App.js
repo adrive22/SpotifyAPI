@@ -1,10 +1,10 @@
 import logo from './logo.svg';
 import './App.css';
 import SpotifyWebApi from "spotify-web-api-js"
-
+import WebPlayback from './WebPlayback'
 import React, {useState, useEffect} from "react"
-
 const spotifyApi = new SpotifyWebApi
+
 
 const getTokenFromURL = () => {
   return window.location.hash
@@ -122,25 +122,19 @@ console.log(trackFeatures)
     })
   }
 
-
+  
 
   return (
     <div className="App">
      {!loggedIn && <a href="http://localhost:8888">Login to Spotify</a>}
-    {loggedIn &&(
-      <>
-      <div>NowPlaying:{nowPlaying.name}
-      <div>
-        <img src={nowPlaying.albumArt} style={{height:150}}/>
-       </div>
-       </div>
-       </>
-    )}
     {loggedIn && (
+      <>
       <button onClick={()=>getNowPlaying()}>Check Now Playing</button>
+      <WebPlayback token={spotifyToken} />
+      </>
     )
-      
     }
+   <i></i>
      </div>
   );
 }
