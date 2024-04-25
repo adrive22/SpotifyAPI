@@ -52,7 +52,7 @@ function WebPlayback(props) {
       <>
         <div className="container">
            <div className="main-wrapper">
-           
+           {player}
             </div>
         </div>
       </>
